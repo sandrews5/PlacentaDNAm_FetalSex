@@ -14,7 +14,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE108567")
 system("tar -xvf GSE108567_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),7))
@@ -48,7 +47,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE100197")
 system("tar -xvf GSE100197_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),9))
@@ -84,7 +82,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE98224")
 system("tar -xvf GSE98224_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 myvars <- grep("characteristics",colnames(mypheno))
@@ -135,7 +132,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE106089")
 system("tar -xvf GSE106089_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),9))
@@ -171,7 +167,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE103413")
 system("tar -xvf GSE103413_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),3))
@@ -201,7 +196,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE98938")
 system("tar -xvf GSE98938_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),3))
@@ -231,7 +225,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE93208")
 system("tar -xvf GSE93208_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),4))
@@ -262,7 +255,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE71719")
 system("tar -xvf GSE71719_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),3))
@@ -292,7 +284,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE71678")
 system("tar -xvf GSE71678_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),5))
@@ -324,7 +315,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE75248")
 system("tar -xvf GSE75248_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 gender<-unlist(lapply(mypheno[,10],function(x){strsplit(sub(" ", ";", x), ";")[[1]][2]}))
@@ -368,7 +358,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE75196")
 system("tar -xvf GSE75196_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),4))
@@ -402,7 +391,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE69502")
 system("tar -xvf GSE69502_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),5))
@@ -413,8 +401,6 @@ pd[,4]<-unlist(lapply(as.character(mypheno[,13]),function(x){strsplit(x,": ")[[1
 tmp<-unlist(lapply(as.character(mypheno[,37]),function(x){strsplit(x,"suppl/")[[1]][2]}))
 pd[,5]<-unlist(lapply(tmp,function(x){strsplit(x,"_Grn")[[1]][1]}))
 colnames(pd)<-c("Phenotype","Sex","Tissue","GA","Basename")
-
-#pd<-pd[which(pd$Tissue=="chorionic villi"),]
 
 RGset<-read.metharray.exp(getwd(),targets=pd,verbose=TRUE)
 save(RGset,file="RGset.rda")
@@ -437,7 +423,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE74738")
 system("tar -xvf GSE74738_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 mypheno<-mypheno[which(mypheno[,12]=="sample tissue: placental chorionic villi"),]
@@ -470,7 +455,6 @@ mypheno<-as(mypheno,"data.frame")
 rm(mine)
 setwd("./GSE66210")
 system("tar -xvf GSE66210_RAW.tar")
-#Unfortunately need to unzip all the idat files first. 
 system("gunzip *.idat.gz")
 
 pd<-data.frame(matrix(0,nrow(mypheno),4))
