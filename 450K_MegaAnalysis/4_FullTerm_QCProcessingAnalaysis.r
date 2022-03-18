@@ -255,5 +255,5 @@ bumps <- bumphunter (M, design=mymod, coef=2,pos=pos,chr=chrnames,
 	verbose=TRUE, smoothFunction=loessByCluster)
 
 save(bumps, file = "bumps.rda")
-system("aws s3 cp bumps.rda s3://shanandrews/FetalSex_MetaAnalysis/TermAnalysis/bumps.rda")
+
 
